@@ -92,14 +92,14 @@ async function getDetailsComic(path) {
     description: info.find('.entry-content.entry-content-single p').text(),
     genres,
     status: info.find('.imptdt:contains("Status") a').text(),
-    released: info.find('.fmed:contains("Terbitan") span').text().replace(' ', ''),
-    author: info.find('.imptdt:contains("Pengarang") span').text().replace(' ', ''),
+    released: info.find('.fmed:contains("Terbitan") span').text().trim(),
+    author: info.find('.fmed:contains("Pengarang") span').text().trim(),
     type: info.find('.imptdt:contains("Tipe") a').text(),
-    serialization: info.find('.imptdt:contains("Edisi") span').text().replace(' ', ''),
-    postedBy: info.find('.imptdt:contains("Ilustrator") span').text().replace(' ', ''),
+    serialization: info.find('.fmed:contains("Edisi") span').text().trim(),
+    postedBy: info.find('.fmed:contains("Ilustrator") span').text().trim(),
     postedOn: '',
-    updatedOn: info.find('.imptdt:contains("Rilisan Terakhir") span').text().replace(' ', ''),
-    rating: parseFloat(info.find('.numb').attr('content')),
+    updatedOn: info.find('.fmed:contains("Rilisan Terakhir") span').text().trim(),
+    rating: parseFloat(info.find('.rating-prc div').attr('content')),
     chapters
   }
 
