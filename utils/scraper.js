@@ -70,15 +70,15 @@ async function getDetailsComic(path) {
 
   // Genres
   const genres = []
-  info.find('.spe span:nth-child(1) a').map((i, element) => {
+  info.find('.wd-full .mgen a').map((i, element) => {
     const genre = $(element).text()
     genres.push(genre)
   })
 
   //  Chapters
   const chapters = []
-  $('.bixbox.bxcl > ul > li').map((i, element) => {
-    const chapter = $(element).find('.lchx a')
+  $('.bixbox .bxcl .epcheck > ul > li').map((i, element) => {
+    const chapter = $(element).find('.eph-num a')
     chapters.push({
       title: chapter.text(),
       path: chapter.attr('href').replace(baseURL, '/read')
