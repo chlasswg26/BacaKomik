@@ -89,7 +89,7 @@ async function getDetailsComic(path) {
   const details = {
     title: info.find('.thumb img').attr('alt'),
     thumb: info.find('.thumb img').attr('src'),
-    description: info.find('entry-content.entry-content-single p').text(),
+    description: info.find('.entry-content.entry-content-single p').text(),
     genres,
     status: info.find('.spe span:nth-child(2)').text().split(' ')[1],
     released: info.find('.spe span:nth-child(3)').text().split(' ')[1],
