@@ -99,7 +99,7 @@ async function getDetailsComic(path) {
       .split(' ')
       .slice(1)
       .join(' '),
-    type: info.find('.spe span:nth-child(5)').text().split(' ')[1],
+    type: info.find('.imptdt:contains("Tipe") a').text(),
     serialization: info
       .find('.spe span:nth-child(6)')
       .text()
