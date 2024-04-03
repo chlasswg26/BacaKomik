@@ -91,40 +91,15 @@ async function getDetailsComic(path) {
     thumb: info.find('.thumb img').attr('src'),
     description: info.find('.entry-content.entry-content-single p').text(),
     genres,
-    status: info.find('.spe span:nth-child(2)').text().split(' ')[1],
+    status: info.find('.imptdt:contains("Status") a').text(),
     released: info.find('.fmed:contains("Terbitan") span').text().replace(' ', ''),
-    author: info
-      .find('.spe span:nth-child(4)')
-      .text()
-      .split(' ')
-      .slice(1)
-      .join(' '),
+    author: info.find('.imptdt:contains("Pengarang") span').text().replace(' ', ''),
     type: info.find('.imptdt:contains("Tipe") a').text(),
-    serialization: info
-      .find('.spe span:nth-child(6)')
-      .text()
-      .split(' ')
-      .slice(1)
-      .join(' '),
-    postedBy: info
-      .find('.spe span:nth-child(7)')
-      .text()
-      .split(' ')
-      .slice(2)
-      .join(' '),
-    postedOn: info
-      .find('.spe span:nth-child(8)')
-      .text()
-      .split(' ')
-      .slice(2)
-      .join(' '),
-    updatedOn: info
-      .find('.spe span:nth-child(9)')
-      .text()
-      .split(' ')
-      .slice(2)
-      .join(' '),
-    rating: parseFloat($('.rating strong').text().split(' ')[1]),
+    serialization: info.find('.imptdt:contains("Edisi") span').text().replace(' ', ''),
+    postedBy: info.find('.imptdt:contains("Ilustrator") span').text().replace(' ', ''),
+    postedOn: '',
+    updatedOn: info.find('.imptdt:contains("Rilisan Terakhir") span').text().replace(' ', ''),
+    rating: parseFloat(info.find('.numb').attr('content')),
     chapters
   }
 
