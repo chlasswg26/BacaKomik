@@ -126,9 +126,9 @@ async function getPagesOfComic(path) {
   })
 
   // Pagination
-  const pagination = $('.nextprev')
-  const prev = pagination.find('.ch-prev-btn a').attr('href')
-  const next = pagination.find('.ch-next-btn a').attr('href')
+  const pagination = $('.npv.r')
+  const prev = pagination.find('.nextprev .ch-prev-btn').attr('href')
+  const next = pagination.find('.nextprev .ch-next-btn').attr('href')
 
   // Response
   return {
