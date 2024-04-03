@@ -92,7 +92,7 @@ async function getDetailsComic(path) {
     description: info.find('.entry-content.entry-content-single p').text(),
     genres,
     status: info.find('.spe span:nth-child(2)').text().split(' ')[1],
-    released: info.find('.spe span:nth-child(3)').text().split(' ')[1],
+    released: info.find('.fmed:contains("Terbitan") span').text().replace(' ', ''),
     author: info
       .find('.spe span:nth-child(4)')
       .text()
