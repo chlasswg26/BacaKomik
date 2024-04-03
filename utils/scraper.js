@@ -78,7 +78,7 @@ async function getDetailsComic(path) {
   //  Chapters
   const chapters = []
   $('.bixbox .bxcl .epcheck > ul > li').map((i, element) => {
-    const chapter = $(element).find('.eph-num a')
+    const chapter = $(element).find('.chbox .eph-num a')
     chapters.push({
       title: chapter.text(),
       path: chapter.attr('href').replace(baseURL, '/read')
