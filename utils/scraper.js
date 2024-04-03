@@ -136,8 +136,8 @@ async function getPagesOfComic(path) {
   return {
     title,
     pagination: {
-      prev: prev ? prev.replace(baseURL, '/read') : null,
-      next: next ? next.replace(baseURL, '/read') : null
+      prev: prev,
+      next: next
     },
     pages
   }
